@@ -21,10 +21,8 @@ struct CharactersListView: View {
                         .bold()
                     characterList(with: characters)
                 }
-            } else if viewModel.characters?.isEmpty == true {
-                ErrorMessageView(text: AppConstants.Error.noCharacters)
-            } else if viewModel.error != nil {
-                ErrorMessageView(text: AppConstants.Error.unableToFetchData)
+            } else {
+                ErrorMessageView(text: viewModel.errorMessage)
             }
         }
         .task {

@@ -18,6 +18,16 @@ class CharactersListViewModel: ObservableObject {
         self.service = service
     }
 
+    var errorMessage: String {
+        if characters?.isEmpty == true {
+            AppConstants.Error.noCharacters
+        } else if error != nil {
+            AppConstants.Error.unableToFetchData
+        } else {
+            AppConstants.Error.defaultMessage
+        }
+    }
+
     @MainActor
     func loadCharacters() async {
         do {

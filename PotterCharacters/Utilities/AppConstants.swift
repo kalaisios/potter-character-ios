@@ -18,6 +18,7 @@ struct AppConstants {
     struct Error {
         static let noCharacters = "No characters found"
         static let unableToFetchData = "Unable to fetch data"
+        static let defaultMessage = "Something went wrong"
     }
     
     static let charactersList = "Characters List"

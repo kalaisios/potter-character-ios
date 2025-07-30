@@ -17,7 +17,15 @@ class CharacterDetailViewModel: ObservableObject {
     init(service: CharacterServiceProtocol = CharacterServiceManager()) {
         self.service = service
     }
-    
+
+    var errorMessage: String {
+        if error != nil {
+            AppConstants.Error.unableToFetchData
+        } else {
+            AppConstants.Error.defaultMessage
+        }
+    }
+
     @MainActor
     func fetchCharacterDetails(with index: Int) async {
         do {

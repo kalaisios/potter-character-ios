@@ -9,6 +9,7 @@ import SwiftUI
 
 struct ErrorMessageView: View {
     var text: String
+
     var body: some View {
         Text(text)
             .font(.title2)

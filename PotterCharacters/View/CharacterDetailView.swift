@@ -17,8 +17,8 @@ struct CharacterDetailView: View {
                 ProgressView()
             } else if let character = viewModel.character {
                 characterView(with: character)
-            } else if viewModel.error != nil {
-                ErrorMessageView(text: AppConstants.Error.unableToFetchData)
+            } else {
+                ErrorMessageView(text: viewModel.errorMessage)
             }
         }
         .task {
